@@ -50,4 +50,24 @@ public class ControladorCanciones {
         servicioCanciones.agregarCancion(cancion);
         return "redirect:/canciones";
     }
+    @GetMapping("/canciones/formulario/editar/{idCancion}")
+    public String formularioEditarCancion(@PathVariable Long idCancion, Model modelo) {
+        Cancion cancion = servicioCanciones.obtenerCancionPorId(idCancion);
+        modelo.addAttribute("cancion", cancion);
+        return "editarCancion";
+    }
+
+    @PostMapping("/canciones/procesa/editar/{idCancion}")
+    public String procesarEditarCancion(
+            @PathVariable Long idCancion,
+            @Valid Cancion cancion,
+            BindingResult resultado,
+            Model modelo) {
+        if (resultado.hasErrors()) {
+            return "editarCancion";
+        }
+        cancion.setId(idCancion);
+        servicioCanciones.actualizaCancion(cancion);
+        return "redirect:/canciones";
+    }
 }

@@ -28,3 +28,14 @@ td a {
 }
 
 td a:hover { text-decoration: underline; }
+
+.error-msg {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+form input.error {
+    border-color: #e74c3c;
+}

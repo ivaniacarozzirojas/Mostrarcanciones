@@ -39,3 +39,12 @@ td a:hover { text-decoration: underline; }
 form input.error {
     border-color: #e74c3c;
 }
+.btn-eliminar {
+    background-color: #c0392b;
+    color: white;
+    margin-top: 10px;
+}
+
+.btn-eliminar:hover {
+    background-color: #922b21;
+}

@@ -29,6 +29,7 @@
                     <p><strong>Fecha de actualización:</strong> ${cancion.fechaActualizacion}</p>
                 </div>
 				<a href="/canciones/formulario/editar/${cancion.id}" class="btn btn-primary">✏️ Editar canción</a>
+				<a href="/canciones/eliminar/${cancion.id}" class="btn btn-eliminar">🗑️ Eliminar canción</a>
             </c:otherwise>
         </c:choose>
         <a href="/canciones" class="btn btn-volver">← Volver a lista de canciones</a>

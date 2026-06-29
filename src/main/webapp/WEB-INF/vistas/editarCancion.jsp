@@ -19,9 +19,16 @@
             <form:input path="titulo" type="text"/>
             <form:errors path="titulo" cssClass="error-msg"/>
 
-            <label>Artista:</label>
-            <form:input path="artista" type="text"/>
-            <form:errors path="artista" cssClass="error-msg"/>
+			<label>Artista:</label>
+			<form:select path="artista">
+			    <option value="">-- Selecciona un Artista --</option>
+			    <c:forEach var="art" items="${listaArtistas}">
+			        <option value="${art.id}" ${art.id == cancion.artista.id ? 'selected' : ''}>
+			            ${art.nombre}
+			        </option>
+			    </c:forEach>
+			</form:select>
+			<form:errors path="artista" cssClass="error-msg"/>
 
             <label>Álbum:</label>
             <form:input path="album" type="text"/>
